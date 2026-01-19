@@ -113,9 +113,3 @@ def main():
             print("🔹 Atbash Cipher:", atbash.encrypt(text))
         else:
             print("❌ Invalid choice. Please try again.")
-
-# start the program
-if __name__ == "__main__":
-    print("🔐 Welcome to the Cryptography Toolkit!")
-    rules()
-    main()
