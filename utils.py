@@ -116,6 +116,6 @@ def main():
 
 # start the program
 if __name__ == "__main__":
-    print("🔐 Welcome to the Encryption Software v3.0")
+    print("🔐 Welcome to the Cryptography Toolkit!")
     rules()
     main()
