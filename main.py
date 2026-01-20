@@ -1,4 +1,4 @@
-from utils import main, rules, menu, get_text, get_shift
+from utils import main, rules
 
 # start the program
 if __name__ == "__main__":

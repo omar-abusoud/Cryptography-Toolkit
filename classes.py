@@ -77,8 +77,19 @@ class AtbashCipher(Cipher):
 
     decrypt = encrypt  # Atbash is symmetric cipher
 
+class BinaryConverter(Cipher):
+
+    def encrypt(self, text: str) -> str:
+        result = ' '.join(format(ord(c), '08b') for c in text)
+        return result
+
+    def decrypt(self, binary: str) -> str:
+        binary = binary.replace(" ", "") 
+        result = ''.join(chr(int(binary[i:i+8], 2)) for i in range(0, len(binary), 8))
+        return result
+
 @dataclass
-class Translator(Cipher): # binary , morse code , bacon cipher 
+class Translator(Cipher): # morse code , bacon cipher 
     mapping: dict
     kind : str
 
