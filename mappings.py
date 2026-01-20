@@ -16,7 +16,7 @@ t2bacon = {
     "k": "ABABA", "l": "ABABB", "m": "ABBAA", "n": "ABBAB", "o": "ABBBA",
     "p": "ABBBB", "q": "BAAAA", "r": "BAAAB", "s": "BAABA", "t": "BAABB",
     "u": "BABAA", "v": "BABAB", "w": "BABBA", "x": "BABBB", "y": "BBAAA",
-    "z": "BBAAB"
+    "z": "BBAAB", " ": "BBBBB"
 }
 
 bacon2t = {v: k for k , v in t2bacon.items()}        # bacon cipher to text mapping
