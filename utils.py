@@ -1,5 +1,5 @@
-from classes import CaesarCipher, ROT13Cipher, XORCipher, AtbashCipher, Translator
-from mappings import t2m, m2t, t2b, b2t, t2bacon, bacon2t
+from classes import CaesarCipher, ROT13Cipher, XORCipher, AtbashCipher,BinaryConverter, Translator
+from mappings import t2m, m2t, t2bacon, bacon2t
 
 def rules():
     print("""
@@ -58,12 +58,11 @@ def main():
     atbash = AtbashCipher()
     xor_key = "key"  # Default key for XOR Cipher
     xor = XORCipher(xor_key)
+    binary = BinaryConverter()
 
     # Translator ciphers
     morse_enc = Translator(t2m, kind="morse")
     morse_dec = Translator(m2t, kind="morse")
-    binary_enc = Translator(t2b, kind="binary")
-    binary_dec = Translator(b2t, kind="binary")
     bacon_enc = Translator(t2bacon, kind="bacon")
     bacon_dec = Translator(bacon2t, kind="bacon")
 
@@ -85,9 +84,9 @@ def main():
         elif choice == "2":
             print("🔹 Text:", morse_dec.decrypt(text))
         elif choice == "3":
-            print("🔹 Binary Code:", binary_enc.encrypt(text.lower()))
+            print("🔹 Binary Code:", binary.encrypt(text))
         elif choice == "4":
-            print("🔹 Text:", binary_dec.decrypt(text))
+            print("🔹 Text:", binary.decrypt(text))
         elif choice == "5":
             print("🔹 Bacon Cipher:", bacon_enc.encrypt(text.lower()))
         elif choice == "6":
@@ -113,9 +112,3 @@ def main():
             print("🔹 Atbash Cipher:", atbash.encrypt(text))
         else:
             print("❌ Invalid choice. Please try again.")
-
-# start the program
-if __name__ == "__main__":
-    print("🔐 Welcome to the Cryptography Toolkit!")
-    rules()
-    main()
